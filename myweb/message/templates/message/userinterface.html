@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User</title>
+</head>
+<body>
+    <div>这里是用户主界面</div>
+    <table border="1">
+        <caption>你发布的留言</caption>
+        <thead>
+            <tr>
+                <th>留言标题</th>
+                <th>发布时间</th>
+                <th>进行操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in user_message_list %}
+            <tr>
+                <th>{{a.message_text}}</th>
+                <th>{{a.message_time}}</th>
+                <th><a href="{% url 'message:messagedetail' a.id %}">详情</a></th>
+            </tr> 
+            {% endfor %}
+        </tbody>
+    </table><br>
+    <form action="/message/userinterface/" method="POST" autocomplete="off">
+        <div>发布你的留言</div>
+        <input type="text" name="message_text"><br>
+        <input type="text" name="message_contect">
+        <input type="submit" value="提交">
+        {% csrf_token %}
+    </form>
+</body>
+</html>

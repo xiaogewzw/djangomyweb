@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+    <style>
+        div{
+            text-align: center;
+            font-size: 300%;
+            color: rgb(255, 0, 0);
+            }
+        div.text{
+            font-size: 300%;
+            text-align: center;
+            color: rgb(9, 255, 0);
+        }
+        table{
+            color: blue;
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+    <div>欢迎你来到***的第一个应用，这里是主页面</div>
+    <div class="text">
+        <a href="/message/login">登录</a><br>
+        <a href="/message/register">注册</a>
+    </div>
+    <table border="1">
+        <tr>
+            <td>用户名</td>
+            <td>留言标题</td>
+            <td>留言时间</td>
+        </tr>
+        {% for c in message_list %}
+        <tr>
+            <td>{{c.message_user}}</td>
+            <td>{{c.message_text}}</td>
+            <td>{{c.message_time}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

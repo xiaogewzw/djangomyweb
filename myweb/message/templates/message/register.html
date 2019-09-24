@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+</head>
+<body>
+    <div>这里是注册界面</div>
+    <form action="/message/register/" method="POST" autocomplete="off">
+        <div>请输入你的账号</div>
+        <input type="text" name="username"><br>
+        <div>输入密码</div>
+        <input type="text" name="password"><br>
+        <input type="submit" value="提交">
+        {% csrf_token %}
+    </form>
+    <div>{{text}}</div>
+    <a href="/message/login/">返回</a>
+</body>
+</html>

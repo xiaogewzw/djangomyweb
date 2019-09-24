@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Messagedetail</title>
+    <style>
+        div{
+            color: blue;
+        }
+        div.detail{
+            color: red;
+            border-style:solid;
+            width: 160px;
+            height:60px;
+            font-size: 250%;
+            margin-top: 50px;
+            margin-left: 700px;
+        }
+        div.tect{
+            color: blueviolet;
+            border-style:solid;
+            width:80%; 
+            margin-left: 10px;
+            font-size:150%;
+        }
+        div.contect{
+            color: blueviolet;
+            border-style:solid;
+            width:80%; 
+            height: 400px;
+            margin-left: 10px;
+            font-size:150%;
+        }
+    </style>
+</head>
+<body>
+    <div>欢迎来到留言的详情</div>
+    <div class="detail">留言详情</div>
+    <div class="tect">{{message.message_text}}</div>
+    <div class="contect">{{message.message_contect}}</div>
+    <div class="time">{{message.message_time}}</div>
+</body>
+</html>
